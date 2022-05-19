@@ -25,9 +25,10 @@ keymap("n", "<C-x>", "<cmd>Bdelete!<CR>", opts)
 keymap("n", "<leader>ff", "<cmd>Telescope find_files<cr>", opts)
 keymap("n", "<leader>fb", "<cmd>Telescope file_browser theme=dropdown<cr>", opts)
 keymap("n", "<leader>fc", "<cmd>Telescope file_browser path=%:p:h theme=dropdown<cr>", opts)
+keymap("n", "<leader>ol", "<cmd>Telescope oldfiles theme=dropdown<cr>", opts)
 keymap("n", "<leader>gr", "<cmd>Telescope live_grep<cr>", opts)
 keymap("n", "<leader>b", "<cmd>Telescope buffers<cr>", opts)
-keymap("n", "<leader>fh", "<cmd>Telescope help_tags<cr>", opts)
+keymap("n", "<leader>fht", "<cmd>Telescope help_tags<cr>", opts)
 keymap("n", "<leader>gs", "<cmd>Telescope git_status<cr>", opts)
 keymap("n", "<leader>gb", "<cmd>Telescope git_branches<cr>", opts)
 keymap("n", "<leader>cc", "<cmd>Telescope coc<cr>", opts)
@@ -53,3 +54,4 @@ vim.cmd [[
   nnoremap <silent><leader>9 <Cmd>BufferLineGoToBuffer 9<CR>
 ]]
 
+-- Dashboard

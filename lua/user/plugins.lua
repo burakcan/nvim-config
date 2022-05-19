@@ -53,6 +53,11 @@ return packer.startup(function(use)
         branch = "release"
     }
 
+    use {
+        "goolord/alpha-nvim",
+        requires = { 'kyazdani42/nvim-web-devicons' },
+    }
+
     use "nvim-telescope/telescope.nvim"
 
     use {
