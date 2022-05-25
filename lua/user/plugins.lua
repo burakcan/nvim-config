@@ -46,7 +46,25 @@ return packer.startup(function(use)
 
     use "github/copilot.vim"
 
+    use "phaazon/hop.nvim"
+
     use "marko-cerovac/material.nvim"
+
+    use {
+        "folke/which-key.nvim",
+        config = function()
+            local status_ok, which_key = pcall(require, "which-key")
+            if not status_ok then
+                return
+            end
+
+            which_key.setup {
+                -- your configuration comes here
+                -- or leave it empty to use the default settings
+                -- refer to the configuration section below
+            }
+        end
+    }
 
     use {
         "neoclide/coc.nvim",
@@ -55,7 +73,7 @@ return packer.startup(function(use)
 
     use {
         "goolord/alpha-nvim",
-        requires = { 'kyazdani42/nvim-web-devicons' },
+        requires = {'kyazdani42/nvim-web-devicons'}
     }
 
     use "nvim-telescope/telescope.nvim"
@@ -79,28 +97,48 @@ return packer.startup(function(use)
     use {
         "windwp/nvim-autopairs",
         config = function()
-            require("nvim-autopairs").setup {}
+            local status_ok, autopairs = pcall(require, "autopairs")
+            if not status_ok then
+                return
+            end
+
+            autopairs.setup {}
         end
     }
 
     use {
         "windwp/nvim-ts-autotag",
         config = function()
-            require("nvim-ts-autotag").setup()
+            local status_ok, ts_autotag = pcall(require, "nvim-ts_autotag")
+            if not status_ok then
+                return
+            end
+
+            ts_autotag.setup()
         end
     }
 
     use {
         "numToStr/Comment.nvim",
         config = function()
-            require("Comment").setup()
+            local status_ok, comment = pcall(require, "Comment")
+            if not status_ok then
+                return
+            end
+
+            comment.setup()
         end
     }
 
     use {
         "lewis6991/gitsigns.nvim",
         config = function()
-            require("gitsigns").setup()
+            local status_ok, gitsigns = pcall(require, "gitsigns")
+            if not status_ok then
+                return
+            end
+
+            gitsigns.setup()
         end
     }
 

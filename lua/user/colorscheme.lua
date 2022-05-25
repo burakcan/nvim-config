@@ -1,7 +1,5 @@
-local material_loaded, material = pcall(require, "material")
-
-if not material_loaded then
-    vim.notify("material is not installed!")
+local status_ok, material = pcall(require, "material")
+if not status_ok then
     return
 end
 
@@ -22,6 +20,6 @@ material.setup({
     }
 })
 
-vim.g.material_style = "palenight"
+vim.g.material_style = "lighter"
 vim.cmd "colorscheme material"
 

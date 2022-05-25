@@ -2,6 +2,7 @@ local opts = {
     noremap = true,
     silent = true
 }
+
 local keymap = vim.api.nvim_set_keymap
 
 -- Space as leader
@@ -41,17 +42,30 @@ keymap("n", "gd", "<cmd>vsp<CR><Plug>(coc-definition)<C-W>T", opts)
 keymap("n", "gv", ":vsp<CR><Plug>(coc-definition)", opts)
 keymap("n", "gs", ":sp<CR><Plug>(coc-definition)", opts)
 
--- Bufferline
-vim.cmd [[
-  nnoremap <silent><leader>1 <Cmd>BufferLineGoToBuffer 1<CR>
-  nnoremap <silent><leader>2 <Cmd>BufferLineGoToBuffer 2<CR>
-  nnoremap <silent><leader>3 <Cmd>BufferLineGoToBuffer 3<CR>
-  nnoremap <silent><leader>4 <Cmd>BufferLineGoToBuffer 4<CR>
-  nnoremap <silent><leader>5 <Cmd>BufferLineGoToBuffer 5<CR>
-  nnoremap <silent><leader>6 <Cmd>BufferLineGoToBuffer 6<CR>
-  nnoremap <silent><leader>7 <Cmd>BufferLineGoToBuffer 7<CR>
-  nnoremap <silent><leader>8 <Cmd>BufferLineGoToBuffer 8<CR>
-  nnoremap <silent><leader>9 <Cmd>BufferLineGoToBuffer 9<CR>
-]]
+-- Hop
+keymap('n', 'f',
+    "<cmd>lua require'hop'.hint_char1({ direction = require'hop.hint'.HintDirection.AFTER_CURSOR, current_line_only = true })<cr>",
+    {})
+keymap('n', 'F',
+    "<cmd>lua require'hop'.hint_char1({ direction = require'hop.hint'.HintDirection.BEFORE_CURSOR, current_line_only = true })<cr>",
+    {})
+keymap('o', 'f',
+    "<cmd>lua require'hop'.hint_char1({ direction = require'hop.hint'.HintDirection.AFTER_CURSOR, current_line_only = true, inclusive_jump = true })<cr>",
+    {})
+keymap('o', 'F',
+    "<cmd>lua require'hop'.hint_char1({ direction = require'hop.hint'.HintDirection.BEFORE_CURSOR, current_line_only = true, inclusive_jump = true })<cr>",
+    {})
+keymap('', 't',
+    "<cmd>lua require'hop'.hint_char1({ direction = require'hop.hint'.HintDirection.AFTER_CURSOR, current_line_only = true })<cr>",
+    {})
+keymap('', 'T',
+    "<cmd>lua require'hop'.hint_char1({ direction = require'hop.hint'.HintDirection.BEFORE_CURSOR, current_line_only = true })<cr>",
+    {})
+keymap('n', '<leader>e',
+    "<cmd> lua require'hop'.hint_words({ hint_position = require'hop.hint'.HintPosition.END })<cr>", {})
+keymap('v', '<leader>e',
+    "<cmd> lua require'hop'.hint_words({ hint_position = require'hop.hint'.HintPosition.END })<cr>", {})
+keymap('o', '<leader>e',
+    "<cmd> lua require'hop'.hint_words({ hint_position = require'hop.hint'.HintPosition.END, inclusive_jump = true })<cr>",
+    {})
 
--- Dashboard
