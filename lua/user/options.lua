@@ -48,4 +48,10 @@ vim.cmd [[
     autocmd BufEnter,FocusGained,InsertLeave,WinEnter * if &nu && mode() != "i" | set rnu   | endif
     autocmd BufLeave,FocusLost,InsertEnter,WinLeave   * if &nu                  | set nornu | endif
   augroup END
+
+  augroup hover
+    autocmd!
+    autocmd CursorHold * call CocActionAsync('highlight')
+  augroup end
 ]]
+

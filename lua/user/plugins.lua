@@ -33,7 +33,7 @@ packer.init {
 }
 
 vim.g.coc_global_extensions = {"coc-lua", "coc-html", "coc-cssmodules", "coc-tsserver", "coc-json", "coc-css",
-                               "coc-svg", "coc-marketplace", "coc-prettier", "coc-eslint"}
+                               "coc-svg", "coc-marketplace", "coc-prettier", "coc-eslint", "coc-highlight"}
 
 return packer.startup(function(use)
     use "wbthomason/packer.nvim"
@@ -50,19 +50,18 @@ return packer.startup(function(use)
 
     use "marko-cerovac/material.nvim"
 
+    use "folke/which-key.nvim"
+
     use {
-        "folke/which-key.nvim",
+        "rcarriga/nvim-notify",
         config = function()
-            local status_ok, which_key = pcall(require, "which-key")
+            local status_ok, notify = pcall(require, "notify")
             if not status_ok then
                 return
             end
 
-            which_key.setup {
-                -- your configuration comes here
-                -- or leave it empty to use the default settings
-                -- refer to the configuration section below
-            }
+            notify.setup()
+            vim.notify = notify
         end
     }
 
