@@ -106,7 +106,8 @@ wk.register({
         d = {"<cmd>Telescope coc diagnostics bufnr=0 theme=get_ivy<cr>", "Buffer Diagnostics"},
         f = {"<cmd>CocCommand editor.action.formatDocument<cr>", "Format"},
         s = {"<cmd>Telescope coc document_symbols<cr>", "Document Symbols"},
-        S = {"<cmd>Telescope coc workspace_symbols<cr>", "Workspace Symbols"}
+        S = {"<cmd>Telescope coc workspace_symbols<cr>", "Workspace Symbols"},
+        r = {"<Plug>(coc-rename)", "Rename"},
     },
 
     T = {

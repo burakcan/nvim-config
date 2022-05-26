@@ -33,7 +33,8 @@ packer.init {
 }
 
 vim.g.coc_global_extensions = {"coc-lua", "coc-html", "coc-cssmodules", "coc-tsserver", "coc-json", "coc-css",
-                               "coc-svg", "coc-marketplace", "coc-prettier", "coc-eslint", "coc-highlight"}
+                               "coc-svg", "coc-marketplace", "coc-prettier", "coc-eslint", "coc-highlight",
+                               "coc-lightbulb"}
 
 return packer.startup(function(use)
     use "wbthomason/packer.nvim"
@@ -57,6 +58,7 @@ return packer.startup(function(use)
         config = function()
             local status_ok, notify = pcall(require, "notify")
             if not status_ok then
+                print("Failed to load notify")
                 return
             end
 
@@ -74,6 +76,25 @@ return packer.startup(function(use)
         "goolord/alpha-nvim",
         requires = {'kyazdani42/nvim-web-devicons'}
     }
+
+    use {
+        "lukas-reineke/indent-blankline.nvim",
+        config = function()
+            local status_ok, indent_blankline = pcall(require, "indent_blankline")
+            if not status_ok then
+                vim.notify("Failed to load indent_blankline")
+                return
+            end
+
+            indent_blankline.setup {
+                show_current_context = true,
+                show_current_context_start = true
+            }
+
+        end
+    }
+    
+    use "gpanders/editorconfig.nvim"
 
     use "nvim-telescope/telescope.nvim"
 
@@ -96,8 +117,9 @@ return packer.startup(function(use)
     use {
         "windwp/nvim-autopairs",
         config = function()
-            local status_ok, autopairs = pcall(require, "autopairs")
+            local status_ok, autopairs = pcall(require, "nvim-autopairs")
             if not status_ok then
+                vim.notify("Failed to load autopairs")
                 return
             end
 
@@ -108,8 +130,9 @@ return packer.startup(function(use)
     use {
         "windwp/nvim-ts-autotag",
         config = function()
-            local status_ok, ts_autotag = pcall(require, "nvim-ts_autotag")
+            local status_ok, ts_autotag = pcall(require, "nvim-ts-autotag")
             if not status_ok then
+                vim.notify("Failed to load nvim-ts_autotag")
                 return
             end
 
@@ -122,6 +145,7 @@ return packer.startup(function(use)
         config = function()
             local status_ok, comment = pcall(require, "Comment")
             if not status_ok then
+                vim.notify("Failed to load Comment")
                 return
             end
 
@@ -134,6 +158,7 @@ return packer.startup(function(use)
         config = function()
             local status_ok, gitsigns = pcall(require, "gitsigns")
             if not status_ok then
+                vim.notify("Failed to load gitsigns")
                 return
             end
 
