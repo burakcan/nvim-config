@@ -107,7 +107,7 @@ wk.register({
         f = {"<cmd>CocCommand editor.action.formatDocument<cr>", "Format"},
         s = {"<cmd>Telescope coc document_symbols<cr>", "Document Symbols"},
         S = {"<cmd>Telescope coc workspace_symbols<cr>", "Workspace Symbols"},
-        r = {"<Plug>(coc-rename)", "Rename"},
+        r = {"<Plug>(coc-rename)", "Rename"}
     },
 
     T = {

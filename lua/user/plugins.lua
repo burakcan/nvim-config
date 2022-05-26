@@ -51,6 +51,10 @@ return packer.startup(function(use)
 
     use "marko-cerovac/material.nvim"
 
+    use "LunarVim/onedarker.nvim"
+
+    use "f-person/auto-dark-mode.nvim"
+
     use "folke/which-key.nvim"
 
     use {
@@ -93,7 +97,7 @@ return packer.startup(function(use)
 
         end
     }
-    
+
     use "gpanders/editorconfig.nvim"
 
     use "nvim-telescope/telescope.nvim"
