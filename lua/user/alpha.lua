@@ -18,9 +18,9 @@ theme.config.layout[6] = {
     }, {
         type = "padding",
         val = 1
-    }, dashboard.button("e", "  New file", "<cmd>ene<CR>"), dashboard.button("SPC f f", "  Find file"),
-           dashboard.button("SPC f b", "  File browser"), dashboard.button("SPC g r", "  Live grep"),
-           dashboard.button("SPC g s", "  Git status"), dashboard.button("SPC g b", "  Git branches"),
+    }, dashboard.button("e", "  New file", "<cmd>ene<CR>"), dashboard.button("SPC s f", "  Find file"),
+           dashboard.button("SPC s c", "  File browser"), dashboard.button("SPC s t", "  Live grep"),
+           dashboard.button("SPC g o", "  Git status"), dashboard.button("SPC g b", "  Git branches"),
            dashboard.button("u", "  Update plugins", "<cmd>PackerSync<CR>"),
            dashboard.button("q", "  Quit", "<cmd>qa<CR>")},
     position = "center"
