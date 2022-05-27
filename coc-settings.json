@@ -25,5 +25,11 @@
     "reference": "\uf87a",
     "typeParameter": "\uf278",
     "default": "\uf29c"
+  },
+  "Lua.telemetry.enable": false,
+  "Lua.format.defaultConfig": {
+    "indent_style": "space",
+    "indent_size": "1",
+    "quote_style": "double"
   }
 }

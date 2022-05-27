@@ -3,8 +3,8 @@ local fn = vim.fn
 -- Automatically install packer
 local install_path = fn.stdpath "data" .. "/site/pack/packer/start/packer.nvim"
 if fn.empty(fn.glob(install_path)) > 0 then
-    PACKER_BOOTSTRAP = fn.system {"git", "clone", "--depth", "1", "https://github.com/wbthomason/packer.nvim",
-                                  install_path}
+    PACKER_BOOTSTRAP = fn.system { "git", "clone", "--depth", "1", "https://github.com/wbthomason/packer.nvim",
+        install_path }
     print "Installing packer close and reopen Neovim..."
     vim.cmd [[packadd packer.nvim]]
 end
@@ -32,9 +32,9 @@ packer.init {
     }
 }
 
-vim.g.coc_global_extensions = {"coc-lua", "coc-html", "coc-cssmodules", "coc-tsserver", "coc-json", "coc-css",
-                               "coc-svg", "coc-marketplace", "coc-prettier", "coc-eslint", "coc-highlight",
-                               "coc-lightbulb"}
+vim.g.coc_global_extensions = { "coc-html", "coc-cssmodules", "coc-tsserver", "coc-json", "coc-css",
+    "coc-svg", "coc-marketplace", "coc-prettier", "coc-eslint", "coc-highlight",
+    "coc-lightbulb", "coc-sumneko-lua" }
 
 return packer.startup(function(use)
     use "wbthomason/packer.nvim"
@@ -78,7 +78,7 @@ return packer.startup(function(use)
 
     use {
         "goolord/alpha-nvim",
-        requires = {'kyazdani42/nvim-web-devicons'}
+        requires = { "kyazdani42/nvim-web-devicons" }
     }
 
     use {
@@ -171,9 +171,9 @@ return packer.startup(function(use)
     }
 
     use {
-        'nvim-lualine/lualine.nvim',
+        "nvim-lualine/lualine.nvim",
         requires = {
-            'kyazdani42/nvim-web-devicons',
+            "kyazdani42/nvim-web-devicons",
             opt = true
         }
     }
@@ -187,7 +187,7 @@ return packer.startup(function(use)
 
     use {
         "akinsho/toggleterm.nvim",
-        tag = 'v1.*'
+        tag = "v1.*"
     }
 
     if PACKER_BOOTSTRAP then
