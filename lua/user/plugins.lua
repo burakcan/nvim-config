@@ -49,13 +49,19 @@ return packer.startup(function(use)
 
     use "phaazon/hop.nvim"
 
-    use "marko-cerovac/material.nvim"
+    use "petertriho/nvim-scrollbar"
 
-    use "LunarVim/onedarker.nvim"
+    use "kevinhwang91/nvim-hlslens"
 
     use "f-person/auto-dark-mode.nvim"
 
     use "folke/which-key.nvim"
+
+    use "sunjon/shade.nvim"
+
+    use "ellisonleao/gruvbox.nvim"
+
+    use "mg979/vim-visual-multi"
 
     use {
         "rcarriga/nvim-notify",
@@ -102,10 +108,9 @@ return packer.startup(function(use)
 
     use "nvim-telescope/telescope.nvim"
 
-    use {
-        "nvim-telescope/telescope-fzf-native.nvim",
-        run = "make"
-    }
+    use { "nvim-telescope/telescope-fzf-native.nvim",
+        run = "cmake -S. -Bbuild -DCMAKE_BUILD_TYPE=Release && cmake --build build --config Release && cmake --install build --prefix build" }
+
 
     use "nvim-telescope/telescope-file-browser.nvim"
 

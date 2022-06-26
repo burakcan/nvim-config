@@ -4,5 +4,7 @@ if not status_ok then
 end
 
 bufferline.setup {
-    close_command = "Bdelete! %d"
+    close_command = "Bdelete! %d",
+    diagnostics = "coc",
+    sort_by = "directory"
 }
